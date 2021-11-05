@@ -45,8 +45,7 @@ public class program2 {
      */
     public static int minus(int per1,int per2) {
         return per1-per2;
-        }
-
+    }
     /**
      *
       * @param per1 первый аргумент
