@@ -26,9 +26,7 @@ public class program2 {
         double division=division(x,y);
         System.out.print("Результат деления ");
         System.out.println(division);
-
     }
-
     /**
      *
      * @param per1 первый аргумент
