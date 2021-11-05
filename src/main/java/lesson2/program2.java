@@ -5,26 +5,20 @@ public class program2 {
         System.out.println("Привет ВСЕМ");
         int x=45;
         int y=12;
-        System.out.print("Первый аргумент X=");
-        System.out.println(x);
-        System.out.print("Первый аргумент Y=");
-        System.out.println(y);
+        System.out.println("Первый аргумент X="+x);
+        System.out.println("Первый аргумент Y="+y);
         // метод сложения
         long summa=summa(x,y);
-        System.out.print("Результат сложения ");
-        System.out.println(summa);
+        System.out.println("Результат сложения "+summa);
         // метод вычитания
         long minus=minus(x,y);
-        System.out.print("Результат вычитания ");
-        System.out.println(minus);
+        System.out.println("Результат вычитания "+minus);
         // метод умножения
         long multiplication=multiplication(x,y);
-        System.out.print("Результат умножения ");
-        System.out.println(multiplication);
+        System.out.println("Результат умножения "+multiplication);
         //метот деления
         double division=division(x,y);
-        System.out.print("Результат деления ");
-        System.out.println(division);
+        System.out.println("Результат деления "+division);
     }
     /**
      *
