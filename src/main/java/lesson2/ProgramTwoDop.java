@@ -1,6 +1,6 @@
 package lesson2;
 
-public class program2v2 {
+public class ProgramTwoDop {
     public static void main(String[] args) {
         System.out.println("Привет ВСЕМ");
         double a = 45;
@@ -18,7 +18,6 @@ public class program2v2 {
      * @return результат длина гипотенузы
      */
     public static double dlGipot(double per1, double per2) {
-         ; // операция сложения
         return Math.sqrt( Math.pow(per1, 2)+Math.pow(per2, 2));
     }
 }
