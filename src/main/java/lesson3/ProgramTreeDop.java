@@ -11,7 +11,7 @@ public class ProgramTreeDop {
         if (n<0) {
             System.out.println("Число n меньше нуля. Вычисление факториала невозможно.");
         } else {
-            int factorialsValue = 1; // присвоение значению факториала первого натурального числа равное 1
+            int factorialsValue = 1; // присвоение значению факториала натурального числа равное 1
             //  Вычисление факториала
             for (int i = 1; i <= n; i += 1) {
                 factorialsValue *= i;
