@@ -8,8 +8,8 @@ public class ProgramTreeDop {
         System.out.println("Вычисление факториала числа n!");
         System.out.print("Введите значение n: ");
         int n = scanner.nextInt(); //Ввод и присвоение переменной n
-        if (n<=0) {
-            System.out.println("Число n меньше или равно нулю. Вычисление факториала невозможно.");
+        if (n<0) {
+            System.out.println("Число n меньше нуля. Вычисление факториала невозможно.");
         } else {
             int factorialsValue = 1; // присвоение значению факториала первого натурального числа равное 1
             //  Вычисление факториала
