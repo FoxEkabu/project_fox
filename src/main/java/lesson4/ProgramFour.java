@@ -7,7 +7,7 @@ public class ProgramFour {
         int i = 1;
         int value = 51;
         double square;
-        //получаем ближайшее или равное value числ0 перемноженное само на себя (квадрат)
+        //получаем ближайшее или равное value число перемноженное само на себя (квадрат)
         for (i = 1; i * i <= value; i++) {
         }
         square = i - 1;
