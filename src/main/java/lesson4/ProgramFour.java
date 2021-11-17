@@ -2,42 +2,44 @@ package lesson4;
 
 public class ProgramFour {
     public static void main(String[] args) {
-        // i - счетчик, value - аргумент извлечения квадратного корня
+        /* i - счетчик, value - аргумент извлечения квадратного корня, square - результат
+        извлечения квадратного корня*/
         int i = 1;
         int value = 51;
-        int square;
+        double square;
+        //получаем ближайшее или равное value числа перемноженное само на себя (квадрат)
         for (i = 1; i * i <= value; i++) {
         }
-        i = i - 1;
+        square = i - 1;
 
+        if (value != square * square) { // Если квадратный корень не целое число
+            // Вчисление разницы между аргументом и ближайшего квадрата числа к аргументу
+            double ostatok = value - square * square;
+            double squareDop = square;
 
-        square = i * i;
-        if (value - square == 0) {
-            System.out.println("Квадратный корень из " + value + " равен " + i);
-        } else {
-            int ostatok = value - square;
-            int  valueDop=i;
-            int  valueSquare=i;
-            // получение дробной части квадратного корня
-            double drob=drob(ostatok,valueDop);
+            // метод получение дробной части квадратного корня, 4 разряда
+            square = drob(ostatok, squareDop) / 10000;
         }
+        System.out.println("Квадратный корень из " + value + " равен " + square);
 
     }
 
-    public static double drob(int ostatok, int valueDop) {
-        int dischargeValue;
-        int discharge=1;
-//вычислем 4 разряда дробной части
-        while (discharge<=4){
-            valueDop = valueDop * 2;
-            int i;
-            for (i = 1; valueDop * 10 + i <= ostatok * 100; i++) {
-            }
-            valueDop = valueDop * 10 + i - 1;
-            ostatok = ostatok - valueDop;
+    public static double drob(double ostatok, double squareDop) {
+
+        int discharge = 1;
+        double square = squareDop;
+        //вычислем 4 разряда дробной части квадратного корня делением столбиком
+        while (discharge <= 4) {
+            squareDop = squareDop * 2;
+            int i = 1;
+            for (i = 1; (squareDop * 10 + i) * i <= (ostatok * 100); i++) ;
+            ostatok = ostatok * 100 - (squareDop * 10 + i - 1) * (i - 1);
+            square = square * 10 + i - 1;
+            squareDop = square;
             discharge++;
 
         }
-        return valueDop;
+        return square;
+
     }
 }
