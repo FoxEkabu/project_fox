@@ -19,14 +19,14 @@ public class Animal {
                 '}';
     }
 // метод voice
-    public void voice() {
-        if (this instanceof Dog) {
-            System.out.println("cобака лает");
-        } else if (this instanceof Cat) {
-            System.out.println("кошка мяукает");
-        }
-        if (this instanceof Mouse) {
-            System.out.println("мышь пищит");
-        }
-    }
+//public void voice() {
+  //      if (this instanceof Dog) {
+  //        System.out.println("cобака лает");
+  //      } else if (this instanceof Cat) {
+  //         System.out.println("кошка мяукает");
+  //      }
+  //      if (this instanceof Mouse) {
+   //         System.out.println("мышь пищит");
+   //     }
+   // }
 }

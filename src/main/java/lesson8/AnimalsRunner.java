@@ -5,18 +5,20 @@ public class AnimalsRunner {
         Dog dog1 = new Dog("Овчарка");
         Dog dog2 = new Dog("Йоркширский терьер");
 
-        Cat cat1=new Cat("Персидская");
-        Cat cat2=new Cat("Сиамская");
+        Cat cat1 = new Cat("Персидская");
+        Cat cat2 = new Cat("Сиамская");
 
-        Mouse mouse1=new Mouse("Полевая");
-        Mouse mouse2=new Mouse("Лесная");
+        Mouse mouse1 = new Mouse("Полевая");
+        Mouse mouse2 = new Mouse("Лесная");
 
+        mouse1.voice();  //   Так работает
+        cat2.voice();
 // помещаем объекты в массив и вызываем метод voice
-Animal[] animal=new Animal[]{dog1,dog2,cat1,cat2,mouse1,mouse2};
-for (Animal animalKid:animal){
-    System.out.print(animalKid.getKidAnimal()+" ");
-         animalKid.voice();
-}
+        Animal[] animal = new Animal[]{dog1, dog2, cat1, cat2, mouse1, mouse2};
+        for (Animal animalKid : animal) {
+            System.out.print(animalKid.getKidAnimal() + " ");
+            // animalKid.() voice(); //  а в массиве не работает
+        }
 
     }
 }
