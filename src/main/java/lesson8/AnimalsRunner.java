@@ -16,9 +16,9 @@ public class AnimalsRunner {
 // помещаем объекты в массив и вызываем метод voice
         Animal[] animal = new Animal[]{dog1, dog2, cat1, cat2, mouse1, mouse2};
         for (Animal animalKid : animal) {
-            System.out.print(animalKid.getKidAnimal() + " ");
-            // animalKid.() voice(); //  а в массиве не работает
-        }
+            //System.out.print(animalKid.getKidAnimal() + " ");
+            animalKid.voice(); //  а в массиве не работает
+    }
 
     }
 }
