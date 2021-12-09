@@ -1,7 +1,7 @@
 package lesson10;
 
 public enum nameTemperature
-{CELSIUS,FAHRENHEIT;
+{Цельсия,Фаренгейт;
 
 public String asString() {
         return name().toLowerCase();

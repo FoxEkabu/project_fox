@@ -1,20 +1,21 @@
 package lesson10;
 
-public class Temperature {
-    double celsius;
-    double fahrenheit;
+public class Temperature implements Converter {
 
-    public Temperature(double celsius, double fahrenheit) {
-        this.celsius = celsius;
-        this.fahrenheit = fahrenheit;
+    private double defaultTemp=0.0;
+
+    public double Temperature(double defaultTemp){
+        return this.defaultTemp=defaultTemp;
     }
 
-    public double getCelsius() {
-        return celsius;
+    @Override
+    public double getInFarenheit(double celcius) {
+        return ((double)(9/5)*(celcius+32.0));
     }
 
-    public double getFahrenheit() {
-        return fahrenheit;
+    @Override
+    public double getInCelcius(double farenheit) {
+        return ((double)5/9*(farenheit-32.0));
     }
 
 
