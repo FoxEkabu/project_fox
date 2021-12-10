@@ -28,19 +28,14 @@ public class ConverterLauncher {
                     if (sc.hasNextDouble()) {
                         celcius = sc.nextDouble();
                         System.out.println(celcius + " градуса " + nameTemperature.Цельсия + " = " + temp.getInFarenheit(celcius) + " градусов " + nameTemperature.Фаренгейт);
-                    } else {
-                        System.out.println("Ввели неправильное значение.");
-
                     }
                     break;
                 case 2:
+
+                    System.out.println("Введите температуру в градусах " + nameTemperature.Фаренгейт + " для конвертации в градусы " + nameTemperature.Цельсия);
                     if (sc.hasNextDouble()) {
-                        System.out.println("Введите температуру в градусах " + nameTemperature.Фаренгейт + " для конвертации в градусы " + nameTemperature.Цельсия);
                         fareinheit = sc.nextDouble();
                         System.out.println(fareinheit + " градус(ов) " + nameTemperature.Фаренгейт + " = " + temp.getInCelcius(fareinheit) + " градуса " + nameTemperature.Цельсия);
-                    } else {
-                        System.out.println("Ввели неправильное значение.");
-
                     }
                     break;
                 case 3:
