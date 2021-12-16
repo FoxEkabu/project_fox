@@ -3,13 +3,13 @@ package lesson11;
 public class Car {
     private String gosNomer; // госномер
     private String typeCar; // тип автомобиля
-    private double speed; // скорость
-    private int weight; // вес
+    private int speed; // скорость
+    private double weight; // вес
     private double width; // ширина
     private double height; // высота
     private double length; // длина
 
-    public Car(String gosNomer, String typeCar, double speed, int weight, double width, double height, double length) {
+    public Car(String gosNomer, String typeCar, int speed, double weight, double width, double height, double length) {
         this.gosNomer = gosNomer;
         this.typeCar = typeCar;
         this.speed = speed;
@@ -27,7 +27,7 @@ public class Car {
         return gosNomer;
     }
 
-    public double getSpeed() {
+    public int getSpeed() {
         return speed;
     }
 
@@ -47,11 +47,33 @@ public class Car {
         return length;
     }
 
-    public void controlSpeed(double speed) throws travelCheckPoint {
-        if (speed>80 && speed<100) {
-            System.out.println(typeCar+" автомобиль " + "с гос. номером "+gosNomer+" проехал КПП со скоростью "+speed);
-        throw new travelCheckPoint();
+    public void controlSpeed() throws travelCheckPoint {
+        if (speed > 80 && speed <= 100) {
 
+            throw new travelCheckPoint(typeCar + " автомобиль с гос. номером " + gosNomer + " проехал КПП со скоростью " + speed+" км/ч");
         }
+    }
+
+    public void controlSpeed100() throws travelCheckPoint {
+        if (this.speed > 100) {
+
+            throw new travelCheckPoint(typeCar + " автомобиль с гос. номером " + gosNomer + " проехал КПП со скоростью " + speed + " км/ч, направить наряд полиции на задержание.");
+        }
+
+    }
+
+    public void controlWeight() throws travelCheckPoint {
+        if (weight >= 8) {
+
+            throw new travelCheckPoint(typeCar + " автомобиль с гос. номером " + gosNomer + " весит  " + weight + "тонн, что превышает допустимый вес, движение запрещено.");
+        }
+    }
+
+    public void controlDimensions() throws travelCheckPoint {
+        if (width>2.5|height>4 ) {
+            //System.out.println(typeCar + " автомобиль " + "с гос. номером " + gosNomer + " проехал КПП со скоростью " + speed);
+            throw new travelCheckPoint(typeCar + " автомобиль с гос. номером " + gosNomer + " шириной " +width+ " м и высотой "+height +" м превышает доустимые габариты, движение запрещено.");
+        }
+
     }
 }
