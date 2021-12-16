@@ -2,8 +2,7 @@ package lesson11;
 
 public class TravelCheckPointRuner {
     public static void main(String[] args) throws travelCheckPoint {
-        Car[] car;
-        car = new Car[]{
+        Car[] cars = new Car[]{
                 new Car("А001АА96", "Легковой", 75, 1.5, 2, 2, 3),
                 new Car("А002АА96", "Грузовой", 70, 7, 3, 3, 4),
                 new Car("А003АА96", "Легковой", 110, 1, 2.4, 1.8, 2.5),
@@ -20,12 +19,12 @@ public class TravelCheckPointRuner {
                 new Car("А014АА96", "Легковой", 60, 1.5, 2.1, 2.2, 3.1)
         };
 
-        for (Car cars : car) {
+        for (Car avto : cars) {
             try {
-                cars.controlSpeed();
-                cars.controlSpeed100();
-                cars.controlWeight();
-                cars.controlDimensions();
+                avto.controlSpeed();
+                avto.controlSpeed100();
+                avto.controlWeight();
+                avto.controlDimensions();
             } catch (travelCheckPoint e) {
                 System.err.println(e.getMessage());
             }
