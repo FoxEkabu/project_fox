@@ -65,7 +65,7 @@ public class Car {
     public void controlWeight() throws travelCheckPoint {
         if (weight >= 8) {
 
-            throw new travelCheckPoint(typeCar + " автомобиль с гос. номером " + gosNomer + " весит  " + weight + "тонн, что превышает допустимый вес, движение запрещено.");
+            throw new travelCheckPoint(typeCar + " автомобиль с гос. номером " + gosNomer + " весит  " + weight + " тонн, что превышает допустимый вес, движение запрещено.");
         }
     }
 
