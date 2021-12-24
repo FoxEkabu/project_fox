@@ -1,28 +1,85 @@
 package lesson14;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class PhoneBookRunner {
     public static void main(String[] args) {
-        List<PhoneBook> phonebook = new ArrayList();
-        String fioValue = "";
-        char symbol;
-        for (int i = 1; i <= 10000; i++) {
-            fioValue = "";
+        Collection<PhoneBook> phonebook = new ArrayList<>();
 
-            for (int tt = 1; tt < 4; tt++) {
-                for (int j = 1; j < Math.random() * 14 + 5; j++) {
-                    fioValue += (char) Math.round(Math.random() * 32 + 1040);
+        for (int i = 1; i <= 1000; i++) {
+
+            phonebook.add(new PhoneBook(generateNumber(), i, generateFIO()));
+        }
+
+        Collection<PhoneBook> phonebook2 = new ArrayList<>();
+
+        for (int i = 1; i <= 1000; i++) {
+
+            phonebook2.add(new PhoneBook(generateNumber(), i, generateFIO()));
+        }
+        HashMap<String, Integer> map = new HashMap<String, Integer>();
+        for (PhoneBook num : phonebook) {
+            String tt = (num.getNumber());
+            if (!map.containsKey(tt)) {
+
+                map.put(tt, 0);
+
+                for (PhoneBook num2 : phonebook2) {
+                    String tt2 = num2.getNumber();
+                    if (tt.equals(tt2)) {
+                        Integer k = map.get(tt);
+                        k = k + 1;
+                        map.put(tt, k);
+                    }
+
                 }
-                if (tt < 3)  {fioValue += " ";}
-
             }
-            System.out.println(fioValue);
-            phonebook.add(new PhoneBook(fioValue, 1234343, true, 123456, 123456));
+
 
         }
-        System.out.println(phonebook);
+        map.entrySet().stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                .forEach(System.out::println);
+    }
+
+
+    public static String generateFIO() {
+        String fioValue = "";
+
+        for (int tt = 1; tt < 4; tt++) {
+            for (int j = 1; j < Math.random() * 14 + 5; j++) {
+                fioValue += (char) Math.round(Math.random() * 32 + 1040);
+            }
+            if (tt < 3) {
+                fioValue += " ";
+            }
+
+        }
+        return fioValue;
+    }
+
+    public static String generateNumber() {
+        String numberValue;
+        int operator = (int) Math.round(Math.random()) * 2 + 1;
+        String operatorValue = "";
+        switch (operator) {
+            //МТС
+            case 1:
+                operatorValue = "+7912";
+                break;
+            // Мегафон
+            case 2:
+                operatorValue = "+7922";
+                break;
+            // Мотив
+            case 3:
+                operatorValue = "+7900";
+                break;
+        }
+        //генерация номера от 1 до 100
+        int numberTmp = (int) (Math.round(Math.random() * 100));
+        // формирование сотового номера
+        numberValue = operatorValue + String.format("%07d", numberTmp);
+        return numberValue;
     }
 }
